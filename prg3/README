@@ -1,0 +1,32 @@
+Samantha Rack
+CSE 30264
+Program 3 - RPC
+
+FILE ARCHIVE:
+
+	Makefile (this Makefile can be used to make and make clean all Makefiles in the subdirectories)
+
+	README
+
+	submarine -->
+		sub_client.c
+		Makefile
+
+	rpc_subd -->
+		sub_server.c
+		Makefile
+
+	shared -->
+		shared.h
+		sub.h
+		sub.x
+		Makfile
+
+	**NOTE** - if the Makefiles are called separately, the Makefile in shared must be called first so the appropriate files will be generated.
+
+FEATURES:
+	Play again -- after a win (or loss- see the next feature), a user has the opportunity to play again
+	Stationary bomb -- at the start of the game, a bomb is placed in the grid.  If the user hits the bomb,
+		then she loses the game.  However, if the submarine hits the bomb, then the user automatically
+		wins (without ever finding the submarine).
+

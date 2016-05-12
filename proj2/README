@@ -1,0 +1,41 @@
+Adrian Gerbaud and Samantha Rack
+Included files:
+	client
+		client.c
+		client_lib.c
+		Makefiile
+	server
+		server.c
+		server_lib.c
+		Makefile
+	shared.h
+
+Design Strategy
+
+Server:
+
+The regular steps to create a TCP connection are done as we have seen in previous programming assignments. However, in the while loop where we accept, each time we successfully accept a thread is created to handle the communication with the client, allowing for multiple clients to be connected simoultaneously. The thread will then handle the sending and receving of the structs.
+
+We passed a pointer to a dynamically allocated location for the socket to ensure it was not modified by a new client connected which spawns a new thread.
+
+Client:
+
+A TCP client is created that will connect with the server and send the temperature information. A separate structure is set for each sensor that is connected to the machine. We marshalled the struct into is component pieces and sent them one of the time. While this is not the most efficient techinique, it allows to know exactly how much data is sent and expected to be received. 
+
+
+Usage information
+
+The server is run with the binary thermd. It has the port number 9763 hardcoded, so no command line arguments are needed.
+A client is run with the binary therm with the server as a command line argument.
+
+Example
+Server:
+	./thermd
+Client:
+	./therm student00.cse.nd.edu
+
+
+Crontab
+This assumes the server is run in the student00 machine.
+1 * * * * /afs/nd.edu/courses/cse/cse30264.01/dropbox/srack/Project2/client/therm student00.cse.nd.edu
+31 * * * * /afs/nd.edu/courses/cse/cse30264.01/dropbox/srack/Project2/client/therm student00.cse.nd.edu

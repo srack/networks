@@ -1,0 +1,21 @@
+Samantha Rack
+CSE 30264
+Project 1
+README
+
+The following files are included in Project1.tar--
+	server (folder):
+		bigFile.avi (symbolic link)
+		medFile.pdf (symbolic link)
+		smallFile.pdf (symbolic link)
+		Makefile
+		ftp_server.c
+		ftp_server_lib.h
+		server_lib.h
+	client (folder):
+		Makefile
+		ftp_client.c
+		ftp_client_lib.h
+		client_lib.h
+	README (file)	
+		

@@ -1,0 +1,4 @@
+The directory contains a Makefile for compiling the source code, and the source codes in the file udpclient.c.  Running 'make' will produce the udpclient binary, which can be run as follows to send a message to the server:
+	./udpclient host port <msg or txt file>
+
+I believe that the endianness of both whiz.cse.nd.edu and woodstock.cselab.nd.edu is little endian.  To make this determination, I set sockin->sin_port using ntohs(), which gives the port in the form of the endianness for the computer from which it is run.  The client was still able to send and receive messages from both of the servers, so the endianness had to be the same for the servers as it is for the client.
